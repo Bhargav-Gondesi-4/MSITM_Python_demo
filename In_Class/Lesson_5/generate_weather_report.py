@@ -24,7 +24,7 @@ def create_graphs():
     plt.ylabel('Temperature (°C)')
     plt.title('Temperature Over Time')
     plt.legend()
-    plt.savefig("Output/temperature_plot.png")
+    plt.savefig("temperature_plot.png")
     plt.close()
 
     # Humidity plot
@@ -34,7 +34,7 @@ def create_graphs():
     plt.ylabel('Relative Humidity (%)')
     plt.title('Humidity Over Time')
     plt.legend()
-    plt.savefig("Output/humidity_plot.png")
+    plt.savefig("humidity_plot.png")
     plt.close()
 
     # Wind speed plot
@@ -44,7 +44,7 @@ def create_graphs():
     plt.ylabel('Wind Speed (m/s)')
     plt.title('Wind Speed Over Time')
     plt.legend()
-    plt.savefig("Output/wind_speed_plot.png")
+    plt.savefig("wind_speed_plot.png")
     plt.close()
 
 # Generate the graphs
@@ -68,19 +68,19 @@ pdf.multi_cell(0, 10, "This report contains the weather data scraped from Open-M
 # Add the temperature graph
 pdf.ln(10)
 pdf.cell(40, 10, 'Temperature Over Time:')
-pdf.image("Output/temperature_plot.png", x=10, y=40, w=190)
+pdf.image("temperature_plot.png", x=10, y=40, w=190)
 
 # Add the humidity graph
 pdf.add_page()
 pdf.cell(40, 10, 'Humidity Over Time:')
-pdf.image("Output/humidity_plot.png", x=10, y=40, w=190)
+pdf.image("humidity_plot.png", x=10, y=40, w=190)
 
 # Add the wind speed graph
 pdf.add_page()
 pdf.cell(40, 10, 'Wind Speed Over Time:')
-pdf.image("Output/wind_speed_plot.png", x=10, y=40, w=190)
+pdf.image("wind_speed_plot.png", x=10, y=40, w=190)
 
 # Save the PDF
-pdf.output("Output/weather_report.pdf")
+pdf.output("weather_report.pdf")
 
 print("Weather report PDF generated successfully!")

@@ -1,12 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-response = requests.get("https://en.wikipedia.org/wiki/Web_scraping")
+response = requests.get("https://en.wikipedia.org/wiki/GitHub")
 bs = BeautifulSoup(response.text,"lxml")
-print(bs.find("p").text)
-
-#write the output to a file
-with open("output.txt","w") as file:
-    file.write(bs.find("p").text)
-
+with open("output.txt","w") as file:         
+    for paragraph in bs.find_all("p"):        
+        print(paragraph.text)
+        file.write(str(paragraph))
 file.close()

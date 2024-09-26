@@ -1,3 +1,4 @@
+
 import requests
 import json
 
@@ -12,7 +13,7 @@ if response.status_code == 200:
     data = response.json()
     
     # Save the data to a JSON file for further processing
-    with open("Output/weather_data.json", 'w') as f:
+    with open("weather_data.json", 'w') as f:
         json.dump(data, f, indent=4)
     
     print("Weather data fetched successfully!")
